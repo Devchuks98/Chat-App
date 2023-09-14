@@ -40,7 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text(
-                        "Bing✔",
+                        "Chatterbox",
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.w500),
                       ),
@@ -50,7 +50,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         style: TextStyle(
                             fontWeight: FontWeight.w400, fontSize: 15),
                       ),
-                      Image.asset('assets/texting.png'),
+                      Image.asset('assets/signup.png'),
 
                       //full name formfield
                       TextFormField(
@@ -192,7 +192,7 @@ class _RegisterPageState extends State<RegisterPage> {
           await HelperFunctions.saveUserNameSF(fullName);
           nextScreenReplace(context, const HomePage());
         } else {
-          showSnackbar(context, Colors.green, value);
+          showSnackbar(context, Theme.of(context).primaryColor, value);
           setState(() {
             _isLoading = false;
           });

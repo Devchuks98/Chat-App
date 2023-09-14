@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text(
-                        "Bing✔",
+                        "Chatterbox",
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.w500),
                       ),
@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                             fontWeight: FontWeight.w400, fontSize: 15),
                       ),
-                      Image.asset('assets/message.png'),
+                      Image.asset('assets/login.png'),
 
                       //email formfield
                       TextFormField(
@@ -173,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
           await HelperFunctions.saveUserNameSF(snapshot.docs[0]['fullName']);
           nextScreenReplace(context, const HomePage());
         } else {
-          showSnackbar(context, Colors.green, value);
+          showSnackbar(context, Theme.of(context).primaryColor, value);
           setState(() {
             _isLoading = false;
           });

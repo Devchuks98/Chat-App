@@ -1,5 +1,7 @@
 import 'package:chat_app/helper/helper_function.dart';
+import 'package:chat_app/pages/chat_page.dart';
 import 'package:chat_app/services/database_service.dart';
+import 'package:chat_app/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -83,15 +85,18 @@ class _SearchPageState extends State<SearchPage> {
                     initiateSearchMethod();
                   },
                   child: Container(
-                    width: 40,
-                    height: 40,
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Icon(
-                      Icons.search,
-                      color: Colors.white,
+                    child: Center(
+                      child: Image.asset(
+                        'assets/search.png',
+                        color: Colors.white,
+                        height: 25,
+                      ),
                     ),
                   ),
                 ),
@@ -181,6 +186,22 @@ class _SearchPageState extends State<SearchPage> {
           if (isJoined) {
             setState(() {
               isJoined = !isJoined;
+            });
+            showSnackbar(context, Theme.of(context).primaryColor,
+                "Successfully joined the group");
+            Future.delayed(const Duration(seconds: 2), () {
+              nextScreen(
+                  context,
+                  ChatPage(
+                      groupName: groupName,
+                      groupId: groupId,
+                      userName: userName));
+            });
+          } else {
+            setState(() {
+              isJoined = !isJoined;
+              showSnackbar(
+                  context, Colors.red, "You left the group $groupName");
             });
           }
         },

@@ -68,15 +68,20 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {
-                nextScreen(context, const SearchPage());
-              },
-              icon: const Icon(Icons.search))
+            onPressed: () {
+              nextScreen(context, const SearchPage());
+            },
+            icon: Image.asset(
+              'assets/search.png',
+              height: 30,
+              color: Colors.white,
+            ),
+          ),
         ],
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
         title: const Text(
-          "Bing",
+          "Chatterbox",
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
         ),
       ),
@@ -84,10 +89,9 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 50),
           children: <Widget>[
-            Icon(
-              Icons.account_circle,
-              size: 150,
-              color: Colors.grey[700],
+            Image.asset(
+              'assets/user.png',
+              height: 150,
             ),
             const SizedBox(height: 15),
             Text(
@@ -103,7 +107,10 @@ class _HomePageState extends State<HomePage> {
               selected: true,
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              leading: const Icon(Icons.group),
+              leading: Image.asset(
+                'assets/group3.png',
+                height: 30,
+              ),
               title: const Text(
                 "Groups",
                 style: TextStyle(color: Colors.black),
@@ -120,7 +127,10 @@ class _HomePageState extends State<HomePage> {
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              leading: const Icon(Icons.group),
+              leading: Image.asset(
+                'assets/user.png',
+                height: 30,
+              ),
               title: const Text(
                 "Profile",
                 style: TextStyle(color: Colors.black),
@@ -140,9 +150,19 @@ class _HomePageState extends State<HomePage> {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            icon: const Icon(
-                              Icons.cancel,
-                              color: Colors.red,
+                            icon: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey.withOpacity(0.2),
+                              ),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.cancel,
+                                  color: Colors.red,
+                                ),
+                              ),
                             ),
                           ),
                           IconButton(
@@ -153,9 +173,19 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => const LoginPage()),
                                   (route) => false);
                             },
-                            icon: const Icon(
-                              Icons.done,
-                              color: Colors.green,
+                            icon: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey.withOpacity(0.2),
+                              ),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.done,
+                                  color: Colors.green,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -164,7 +194,10 @@ class _HomePageState extends State<HomePage> {
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              leading: const Icon(Icons.exit_to_app),
+              leading: Image.asset(
+                'assets/exit.png',
+                height: 30,
+              ),
               title: const Text(
                 "Logout",
                 style: TextStyle(color: Colors.black),
@@ -227,6 +260,16 @@ class _HomePageState extends State<HomePage> {
 
   noGroupWidget() {
     return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: const AssetImage('assets/group2.jpg'),
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Colors.black.withOpacity(0.5),
+            BlendMode.darken,
+          ),
+        ),
+      ),
       padding: EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -236,16 +279,16 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               popUpDialog(context);
             },
-            child: Icon(
-              Icons.add_circle,
-              color: Colors.grey[700],
-              size: 75,
+            child: Image.asset(
+              'assets/add.png',
+              height: 100,
             ),
           ),
           const SizedBox(height: 20),
           const Text(
             "You've not joined any group. Tap on the add icon to create group or also seach existing groups",
             textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 15, color: Colors.white),
           ),
         ],
       ),
@@ -326,8 +369,8 @@ class _HomePageState extends State<HomePage> {
                         _isLoading = false;
                       });
                       Navigator.of(context).pop();
-                      showSnackbar(
-                          context, Colors.green, "Group created successfully");
+                      showSnackbar(context, Theme.of(context).primaryColor,
+                          "Group created successfully");
                     }
                   },
                   style: ElevatedButton.styleFrom(

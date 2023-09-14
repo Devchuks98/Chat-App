@@ -31,10 +31,9 @@ class _ProfilePageState extends State<ProfilePage> {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 50),
           children: <Widget>[
-            Icon(
-              Icons.account_circle,
-              size: 150,
-              color: Colors.grey[700],
+            Image.asset(
+              'assets/user.png',
+              height: 150,
             ),
             const SizedBox(height: 15),
             Text(
@@ -50,7 +49,10 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              leading: const Icon(Icons.group),
+              leading: Image.asset(
+                'assets/group3.png',
+                height: 30,
+              ),
               title: const Text(
                 "Groups",
                 style: TextStyle(color: Colors.black),
@@ -62,7 +64,10 @@ class _ProfilePageState extends State<ProfilePage> {
               selectedColor: Theme.of(context).primaryColor,
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              leading: const Icon(Icons.group),
+              leading: Image.asset(
+                'assets/user.png',
+                height: 30,
+              ),
               title: const Text(
                 "Profile",
                 style: TextStyle(color: Colors.black),
@@ -71,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ListTile(
               onTap: () async {
                 showDialog(
-                    barrierDismissible: false,
+                    barrierDismissible: true,
                     context: context,
                     builder: (context) {
                       return AlertDialog(
@@ -82,9 +87,19 @@ class _ProfilePageState extends State<ProfilePage> {
                             onPressed: () {
                               Navigator.pop(context);
                             },
-                            icon: const Icon(
-                              Icons.cancel,
-                              color: Colors.red,
+                            icon: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey.withOpacity(0.2),
+                              ),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.cancel,
+                                  color: Colors.red,
+                                ),
+                              ),
                             ),
                           ),
                           IconButton(
@@ -95,9 +110,19 @@ class _ProfilePageState extends State<ProfilePage> {
                                       builder: (context) => const LoginPage()),
                                   (route) => false);
                             },
-                            icon: const Icon(
-                              Icons.done,
-                              color: Colors.green,
+                            icon: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey.withOpacity(0.2),
+                              ),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.done_sharp,
+                                  color: Colors.green,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -106,7 +131,10 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              leading: const Icon(Icons.exit_to_app),
+              leading: Image.asset(
+                'assets/exit.png',
+                height: 30,
+              ),
               title: const Text(
                 "Logout",
                 style: TextStyle(color: Colors.black),
@@ -116,14 +144,14 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       body: Container(
+        color: Theme.of(context).primaryColor.withOpacity(0.2),
         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 170),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Icon(
-              Icons.account_circle,
-              size: 200,
-              color: Colors.grey[700],
+            Image.asset(
+              'assets/user.png',
+              height: 200,
             ),
             const SizedBox(height: 15),
             Row(
@@ -131,7 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 const Text(
                   "Full Name",
-                  style: TextStyle(fontSize: 17),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   widget.userName,
@@ -145,7 +173,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 const Text(
                   "Email",
-                  style: TextStyle(fontSize: 17),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   widget.email,
