@@ -56,6 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       TextFormField(
                         decoration: textInputDecoration.copyWith(
                           labelText: "Full Name",
+                          hintText: "Enter your full name",
                           prefixIcon: Icon(
                             Icons.person,
                             color: Theme.of(context).primaryColor,
@@ -78,8 +79,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
                       //email formfield
                       TextFormField(
+                        keyboardType: TextInputType.emailAddress,
                         decoration: textInputDecoration.copyWith(
                           labelText: "Email",
+                          hintText: "eg. jondoe@gmail.com",
                           prefixIcon: Icon(
                             Icons.email_rounded,
                             color: Theme.of(context).primaryColor,
@@ -102,9 +105,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
                       //password formfield
                       TextFormField(
+                        maxLength: 6,
                         obscureText: true,
                         decoration: textInputDecoration.copyWith(
                           labelText: "Password",
+                          hintText: "eg. 123456",
                           prefixIcon: Icon(
                             Icons.lock_clock_rounded,
                             color: Theme.of(context).primaryColor,

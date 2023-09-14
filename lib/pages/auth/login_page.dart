@@ -52,12 +52,14 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                             fontWeight: FontWeight.w400, fontSize: 15),
                       ),
-                      Image.asset('assets/login.png'),
+                      Image.asset('assets/login1.png'),
 
                       //email formfield
                       TextFormField(
+                        keyboardType: TextInputType.emailAddress,
                         decoration: textInputDecoration.copyWith(
                           labelText: "Email",
+                          hintText: "Enter your email",
                           prefixIcon: Icon(
                             Icons.email_rounded,
                             color: Theme.of(context).primaryColor,
@@ -80,9 +82,11 @@ class _LoginPageState extends State<LoginPage> {
 
                       //password formfield
                       TextFormField(
+                        maxLength: 6,
                         obscureText: true,
                         decoration: textInputDecoration.copyWith(
                           labelText: "Password",
+                          hintText: "Enter your password",
                           prefixIcon: Icon(
                             Icons.lock_clock_rounded,
                             color: Theme.of(context).primaryColor,
