@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  final String title = "Chat-App";
+  final String title = "Chatterbox";
 
   @override
   Widget build(BuildContext context) {

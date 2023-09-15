@@ -55,6 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       //full name formfield
                       TextFormField(
                         decoration: textInputDecoration.copyWith(
+                          isDense: true,
                           labelText: "Full Name",
                           hintText: "Enter your full name",
                           prefixIcon: Icon(
@@ -81,6 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: textInputDecoration.copyWith(
+                          isDense: true,
                           labelText: "Email",
                           hintText: "eg. jondoe@gmail.com",
                           prefixIcon: Icon(
@@ -108,6 +110,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         maxLength: 6,
                         obscureText: true,
                         decoration: textInputDecoration.copyWith(
+                          isDense: true,
                           labelText: "Password",
                           hintText: "eg. 123456",
                           prefixIcon: Icon(

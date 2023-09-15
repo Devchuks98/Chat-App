@@ -58,6 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: textInputDecoration.copyWith(
+                          isDense: true,
                           labelText: "Email",
                           hintText: "Enter your email",
                           prefixIcon: Icon(
@@ -85,10 +86,11 @@ class _LoginPageState extends State<LoginPage> {
                         maxLength: 6,
                         obscureText: true,
                         decoration: textInputDecoration.copyWith(
+                          isDense: true,
                           labelText: "Password",
                           hintText: "Enter your password",
                           prefixIcon: Icon(
-                            Icons.lock_clock_rounded,
+                            Icons.lock,
                             color: Theme.of(context).primaryColor,
                           ),
                         ),
