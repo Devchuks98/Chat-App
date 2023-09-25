@@ -80,47 +80,61 @@ class _ProfilePageState extends State<ProfilePage> {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        title: const Text("Logout"),
+                        backgroundColor: Colors.white,
+                        title: const Text("Confirm logout"),
                         content: const Text("Are you sure you want to logout?"),
                         actions: [
-                          IconButton(
-                            onPressed: () {
+                          //cancel button
+                          GestureDetector(
+                            onTap: () {
                               Navigator.pop(context);
                             },
-                            icon: Container(
-                              height: 50,
-                              width: 50,
+                            child: Container(
+                              height: 40,
+                              width: 80,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.white,
+                                border: Border.all(
+                                  color: Colors.blue.shade500,
+                                  width: 1,
+                                ),
                               ),
-                              child: const Center(
-                                child: Icon(
-                                  Icons.cancel,
-                                  color: Colors.red,
+                              child: const Align(
+                                child: Text(
+                                  "Cancel",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                          IconButton(
-                            onPressed: () async {
+
+                          //ok button
+                          GestureDetector(
+                            onTap: () async {
                               await authService.signOut();
                               Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(
                                       builder: (context) => const LoginPage()),
                                   (route) => false);
                             },
-                            icon: Container(
-                              height: 50,
-                              width: 50,
+                            child: Container(
+                              height: 40,
+                              width: 80,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.blue,
                               ),
-                              child: const Center(
-                                child: Icon(
-                                  Icons.done_sharp,
-                                  color: Colors.green,
+                              child: const Align(
+                                child: Text(
+                                  "OK",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
