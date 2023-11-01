@@ -20,12 +20,10 @@ Key Features:
 
 Join Chatterbox today and become a part of the most vibrant and diverse group chatting community. Share ideas, gain insights, and connect with people who share your interests.
 
-[![Image of a Flutter project](https://imgur.com/xOqFnie.png)](https://github.com/Devchuks98/Chatterbox)
-[![Image of a Flutter project](https://imgur.com/ZEl8Wux.png)](https://github.com/Devchuks98/Chatterbox)
-[![Image of a Flutter project](https://imgur.com/CD3Yl2J.png)](https://github.com/Devchuks98/Chatterbox)
-[![Image of a Flutter project](https://imgur.com/iovaKA3.png)](https://github.com/Devchuks98/Chatterbox)
-[![Image of a Flutter project](https://imgur.com/kVcxRn2.png)](https://github.com/Devchuks98/Chatterbox)
-[![Image of a Flutter project](https://imgur.com/Gn5y64C.png)](https://github.com/Devchuks98/Chatterbox)
+[![Image of a Flutter project](https://imgur.com/iEsP5qf.png)](https://github.com/Devchuks98/Chatterbox)
+[![Image of a Flutter project](https://imgur.com/sRoFrX6.png)](https://github.com/Devchuks98/Chatterbox)
+[![Image of a Flutter project](https://imgur.com/HbaZcun.png)](https://github.com/Devchuks98/Chatterbox)
+[![Image of a Flutter project](https://imgur.com/MRqUdZ1.png)](https://github.com/Devchuks98/Chatterbox)
 
 ## App Privacy Policy
 
